@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fbff;
+    color: #1a2744;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-glass;
+  }
+
+  .glass-card-dark {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-blue-500 to-primary-400 text-white font-semibold rounded-full shadow-lg hover:shadow-glass-hover hover:scale-105 transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply px-8 py-4 border-2 border-primary-400 text-primary-500 font-semibold rounded-full hover:bg-primary-400 hover:text-white transition-all duration-300 cursor-pointer;
+  }
+
+  .section-heading {
+    @apply font-display font-bold text-4xl md:text-5xl text-gray-800 leading-tight;
+  }
+
+  .section-subtext {
+    @apply text-gray-500 text-lg mt-4 max-w-2xl mx-auto;
+  }
+
+  .tag-badge {
+    @apply px-3 py-1 bg-primary-100 text-primary-600 text-xs font-semibold rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-primary-400;
+  }
+
+  .bg-mesh {
+    background-image: radial-gradient(at 40% 20%, hsla(213, 100%, 85%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(209, 100%, 90%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(221, 100%, 88%, 0.3) 0px, transparent 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f8ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #4DA6FF;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d8fef;
+}
+
+/* 3D card perspective */
+.perspective-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Canvas overlay fix */
+canvas {
+  outline: none;
+}
