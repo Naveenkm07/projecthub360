@@ -96,7 +96,7 @@ function FAQItem({ q, a, idx }) {
                 <span className="font-semibold text-white text-lg pr-8">{q}</span>
                 <ChevronDown 
                     size={20} 
-                    className={\`text-slate-400 transition-transform duration-300 \${isOpen ? 'rotate-180 text-primary-400' : ''}\`} 
+                    className={`text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary-400' : ''}`} 
                 />
             </button>
             <AnimatePresence>
@@ -161,7 +161,7 @@ export default function FAQPage() {
                         <button 
                             key={cat}
                             onClick={() => setActiveCat(cat)}
-                            className={\`px-4 py-2 rounded-xl text-sm font-medium transition-all \${activeCat === cat ? 'bg-primary-500 text-white shadow-glow-sm' : 'glass text-slate-400 hover:text-white hover:bg-white/10'}\`}
+                            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${activeCat === cat ? 'bg-primary-500 text-white shadow-glow-sm' : 'glass text-slate-400 hover:text-white hover:bg-white/10'}`}
                         >
                             {cat}
                         </button>
