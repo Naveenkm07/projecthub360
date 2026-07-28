@@ -82,6 +82,15 @@ export default function LoginPage() {
                                 </button>
                             </div>
 
+                            {tab === 'signup' && (
+                                <div className="flex items-start gap-2 pt-2">
+                                    <input type="checkbox" id="terms" required className="mt-0.5 shrink-0 w-4 h-4 rounded border-white/10 bg-white/5 accent-primary-500 cursor-pointer" />
+                                    <label htmlFor="terms" className="text-xs text-slate-400 leading-tight cursor-pointer">
+                                        I agree to the <Link href="/terms" className="text-primary-400 hover:underline" target="_blank">Terms of Service</Link>
+                                    </label>
+                                </div>
+                            )}
+
                             {error && <p className="text-red-400 text-xs bg-red-400/5 border border-red-400/20 rounded-lg px-3 py-2">{error}</p>}
 
                             <button type="submit" disabled={loading}
@@ -104,7 +113,7 @@ export default function LoginPage() {
                 </div>
 
                 <p className="text-center text-slate-600 text-xs mt-6">
-                    By signing up, you agree to our <Link href="#" className="text-primary-400 hover:underline">Terms of Service</Link>
+                    By signing up or continuing, you agree to our <Link href="/terms" className="text-primary-400 hover:underline">Terms of Service</Link>
                 </p>
             </motion.div>
         </div>
