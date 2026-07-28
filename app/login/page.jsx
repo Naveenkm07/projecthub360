@@ -40,7 +40,7 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+        <div className="min-h-screen flex items-center justify-center px-4 pt-28 pb-12 relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #070d1b 0%, #0e1a33 100%)' }}>
             {/* Blobs */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -48,15 +48,6 @@ export default function LoginPage() {
 
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
                 className="w-full max-w-md">
-                {/* Logo */}
-                <div className="text-center mb-8">
-                    <Link href="/" className="inline-flex items-center gap-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-blue-600 rounded-xl flex items-center justify-center shadow-glow">
-                            <Zap size={20} fill="white" className="text-white" />
-                        </div>
-                        <span className="font-display font-bold text-xl text-white">Proto<span className="text-gradient">Build</span> Labs</span>
-                    </Link>
-                </div>
 
                 <div className="glass rounded-3xl p-8 glow-border">
                     {/* Tabs */}
