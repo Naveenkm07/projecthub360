@@ -39,9 +39,9 @@ export default function BlogListingPage() {
                 {/* Featured Blog */}
                 {activeCategory === 'All' && !search && (
                     <div className="max-w-7xl mx-auto">
-                        <Link href={\`/blog/\${featuredBlog.slug}\`} className="group block">
+                        <Link href={`/blog/${featuredBlog.slug}`} className="group block">
                             <div className="glass rounded-3xl overflow-hidden border border-white/5 hover:border-primary-500/30 transition-all grid md:grid-cols-2 gap-8 items-center">
-                                <div className={\`h-64 md:h-full min-h-[300px] bg-gradient-to-br \${featuredBlog.coverGradient} relative overflow-hidden\`}>
+                                <div className={`h-64 md:h-full min-h-[300px] bg-gradient-to-br ${featuredBlog.coverGradient} relative overflow-hidden`}>
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                                 </div>
                                 <div className="p-8 md:p-12 md:pl-4">
@@ -82,7 +82,7 @@ export default function BlogListingPage() {
                             <button 
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={\`px-4 py-2 rounded-xl text-sm font-medium transition-all \${activeCategory === cat ? 'bg-primary-500 text-white shadow-glow-sm' : 'glass text-slate-400 hover:text-white hover:bg-white/10'}\`}
+                                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${activeCategory === cat ? 'bg-primary-500 text-white shadow-glow-sm' : 'glass text-slate-400 hover:text-white hover:bg-white/10'}`}
                             >
                                 {cat}
                             </button>
@@ -110,8 +110,8 @@ export default function BlogListingPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
                         >
-                            <Link href={\`/blog/\${blog.slug}\`} className="group h-full flex flex-col glass rounded-2xl overflow-hidden border border-white/5 hover:border-primary-500/30 transition-all">
-                                <div className={\`h-48 bg-gradient-to-br \${blog.coverGradient} relative overflow-hidden\`}>
+                            <Link href={`/blog/${blog.slug}`} className="group h-full flex flex-col glass rounded-2xl overflow-hidden border border-white/5 hover:border-primary-500/30 transition-all">
+                                <div className={`h-48 bg-gradient-to-br ${blog.coverGradient} relative overflow-hidden`}>
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                                 </div>
                                 <div className="p-6 flex flex-col flex-1">
