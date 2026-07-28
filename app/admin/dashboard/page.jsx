@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { getProjects, createProject, updateProject, deleteProject, getAllOrders, getContacts, updateOrderStatus } from '@/lib/firestore';
+import { getProjects, createProject, updateProject, deleteProject, getAllOrders, getContacts, updateOrderStatus } from '@/lib/db';
 import { Plus, Edit2, Trash2, X, Save, BarChart3, FolderOpen, Mail, ShoppingBag, Shield, LogOut, ChevronDown } from 'lucide-react';
 import Footer from '@/components/Footer';
 

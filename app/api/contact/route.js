@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request) {
     try {
@@ -11,7 +10,7 @@ export async function POST(request) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        await addDoc(collection(db, 'contacts'), {
+        const { error } = await supabase.from('contacts').insert([{
             name: name.trim(),
             email: email.trim().toLowerCase(),
             phone: phone?.trim() || '',
@@ -19,8 +18,9 @@ export async function POST(request) {
             projectType,
             message: message.trim(),
             status: 'new',
-            createdAt: serverTimestamp(),
-        });
+        }]);
+
+        if (error) throw error;
 
         return NextResponse.json({ success: true, message: 'Inquiry saved successfully' });
     } catch (error) {

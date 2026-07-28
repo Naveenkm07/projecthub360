@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { getProjects } from '@/lib/firestore';
+import { getProjects } from '@/lib/db';
 import { ExternalLink, Search, Filter } from 'lucide-react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';

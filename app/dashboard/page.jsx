@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { getOrdersByUser } from '@/lib/firestore';
+import { getOrdersByUser } from '@/lib/db';
 import Link from 'next/link';
 import { LayoutDashboard, FolderOpen, CreditCard, LogOut, Plus, Zap, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import Footer from '@/components/Footer';
