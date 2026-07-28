@@ -8,7 +8,9 @@ const nextConfig = {
             },
         ],
     },
-    serverExternalPackages: ['razorpay'],
+    experimental: {
+        serverComponentsExternalPackages: ['razorpay'],
+    },
     eslint: {
         // Don't fail the build on lint warnings/errors during deployment
         ignoreDuringBuilds: true,
