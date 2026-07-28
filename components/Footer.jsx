@@ -58,11 +58,14 @@ export default function Footer() {
                         <div key={heading}>
                             <h4 className="font-display font-semibold text-white text-sm mb-4">{heading}</h4>
                             <ul className="space-y-2.5">
-                                {items.map((item) => (
-                                    <li key={item}>
-                                        <Link href="#" className="text-slate-500 text-sm hover:text-primary-400 transition-colors">{item}</Link>
-                                    </li>
-                                ))}
+                                {items.map((item) => {
+                                    const path = `/${item.toLowerCase().replace(/\s+/g, '-')}`;
+                                    return (
+                                        <li key={item}>
+                                            <Link href={path} className="text-slate-500 text-sm hover:text-primary-400 transition-colors">{item}</Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     ))}
@@ -72,9 +75,12 @@ export default function Footer() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-slate-600 text-xs">© 2025 ProtoBuild Labs. All rights reserved. Built with ❤️ for engineering students.</p>
                     <div className="flex gap-5">
-                        {['Privacy Policy', 'Terms', 'Refunds'].map((l) => (
-                            <Link key={l} href="#" className="text-slate-600 text-xs hover:text-primary-400 transition-colors">{l}</Link>
-                        ))}
+                        {['Privacy Policy', 'Terms', 'Refunds'].map((l) => {
+                            const path = `/${l.toLowerCase().replace(/\s+/g, '-')}`;
+                            return (
+                                <Link key={l} href={path} className="text-slate-600 text-xs hover:text-primary-400 transition-colors">{l}</Link>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
